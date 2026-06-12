@@ -1,0 +1,84 @@
+from textwrap import dedent
+
+html = dedent("""
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Jejak Potensi</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:linear-gradient(135deg,#4f46e5,#8b5cf6,#ec4899,#06b6d4);background-size:300% 300%;animation:bg 12s infinite;color:#fff}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+nav{display:flex;justify-content:space-between;padding:20px 7%;align-items:center}
+nav ul{display:flex;gap:20px;list-style:none}
+nav a{color:#fff;text-decoration:none}
+.hero{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:60px 7%}
+.hero h1{font-size:3.5rem;line-height:1.1}
+.hero p{margin:20px 0;max-width:600px}
+.btn{padding:14px 28px;border:none;border-radius:999px;background:#facc15;font-weight:700;cursor:pointer}
+.panel{background:rgba(255,255,255,.15);backdrop-filter:blur(14px);padding:24px;border-radius:20px;min-width:320px}
+.progress{height:10px;background:rgba(255,255,255,.3);border-radius:999px;margin:8px 0 16px}
+.fill{height:100%;background:#facc15;border-radius:999px}
+section.white{background:#fff;color:#222;border-radius:40px 40px 0 0;padding:60px 7%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#f5f3ff;padding:24px;border-radius:18px;transition:.3s}
+.card:hover{transform:translateY(-8px)}
+footer{padding:30px;text-align:center;background:#111827}
+</style>
+</head>
+<body>
+<nav>
+<h2>🎯 Jejak Potensi</h2>
+<ul>
+<li><a href="#">Beranda</a></li>
+<li><a href="#">Tes</a></li>
+<li><a href="#">Konseling</a></li>
+<li><a href="#">Artikel</a></li>
+</ul>
+</nav>
+<div class="hero">
+<div>
+<h1>Mengenal Diri,<br>Mengembangkan Potensi,<br>Membangun Masa Depan.</h1>
+<p>Platform BK digital untuk asesmen, jurnal, mood tracker, konsultasi privat, dan rekomendasi pengembangan diri.</p>
+<button class="btn" onclick="alert('Mulai Tes')">🚀 Mulai Tes</button>
+</div>
+<div class="panel">
+<h3>📊 Ringkasan Potensi</h3>
+<p>Komunikasi</p><div class="progress"><div class="fill" style="width:90%"></div></div>
+<p>Kepemimpinan</p><div class="progress"><div class="fill" style="width:82%"></div></div>
+<p>Kreativitas</p><div class="progress"><div class="fill" style="width:75%"></div></div>
+<p>✨ Rekomendasi: Ikuti organisasi dan public speaking.</p>
+</div>
+</div>
+<section class="white">
+<h2 style="text-align:center;margin-bottom:30px">Fitur Utama</h2>
+<div class="grid">
+<div class="card">🎯<h3>Tes Minat & Bakat</h3><p>Kenali potensi terbaikmu.</p></div>
+<div class="card">😊<h3>Mood Tracker</h3><p>Pantau emosi harian.</p></div>
+<div class="card">💬<h3>Konsultasi BK</h3><p>Chat privat dengan guru.</p></div>
+<div class="card">📈<h3>Jejak Perkembangan</h3><p>Lihat progres dari waktu ke waktu.</p></div>
+<div class="card">🎓<h3>Rekomendasi Karier</h3><p>Saran jurusan dan profesi.</p></div>
+<div class="card">🏅<h3>Badge</h3><p>Apresiasi pencapaianmu.</p></div>
+</div>
+</section>
+<footer>© 2026 Jejak Potensi</footer>
+<script>
+document.querySelectorAll('.card').forEach(c=>{
+ c.addEventListener('click',()=>c.animate(
+ [{transform:'scale(1)'},{transform:'scale(1.05)'},{transform:'scale(1)'}],
+ {duration:250}
+ ));
+});
+</script>
+</body>
+</html>
+""")
+
+path="/mnt/data/jejak_potensi_satu_file.html"
+with open(path,"w",encoding="utf-8") as f:
+    f.write(html)
+
+print(path)
